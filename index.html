@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="jobApplicationForm" onsubmit="return handleSubmit(event)">
+            <h1>Job Application Form</h1>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" id="phoneNumber" name="phoneNumber" required>
+            
+            <label for="position">Applying for Position</label>
+            <select id="position" name="position" onchange="handlePositionChange()" required>
+                <option value="">Select...</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Manager">Manager</option>
+            </select>
+            
+            <div id="relevantExperienceField" class="hidden">
+                <label for="relevantExperience">Relevant Experience (years)</label>
+                <input type="number" id="relevantExperience" name="relevantExperience" min="1">
+            </div>
+            
+            <div id="portfolioUrlField" class="hidden">
+                <label for="portfolioUrl">Portfolio URL</label>
+                <input type="url" id="portfolioUrl" name="portfolioUrl">
+            </div>
+            
+            <div id="managementExperienceField" class="hidden">
+                <label for="managementExperience">Management Experience</label>
+                <input type="text" id="managementExperience" name="managementExperience">
+            </div>
+            
+            <label for="additionalSkills">Additional Skills</label>
+            <div id="additionalSkills">
+                <input type="checkbox" id="skillJavaScript" name="additionalSkills" value="JavaScript">
+                <label for="skillJavaScript">JavaScript</label>
+                <input type="checkbox" id="skillCSS" name="additionalSkills" value="CSS">
+                <label for="skillCSS">CSS</label>
+                <input type="checkbox" id="skillPython" name="additionalSkills" value="Python">
+                <label for="skillPython">Python</label>
+                <!-- Add more checkboxes as needed -->
+            </div>
+            
+            <label for="preferredInterviewTime">Preferred Interview Time</label>
+            <input type="datetime-local" id="preferredInterviewTime" name="preferredInterviewTime" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div id="formSummary" class="hidden">
+            <h2>Form Submission Summary</h2>
+            <p id="summaryContent"></p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
